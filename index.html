@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Shop</title>
+</head>
+<body onload = "onInit()">
+    <header>
+        <h1 data-trans="title">Welcome to my book shop</h1>
+        <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
+        <h4 class="add-book" data-trans="create-new" onclick="onOpenAddBook()">Create a new book
+        </h4>
+    </header>
+    <div class="inputs-modal">
+        <input data-trans="placeholder-title" type="text" name="bookName" placeholder="Title..." />
+        <input data-trans="placeholder-price" type="number" name="price" placeholder="Price..." />
+        <input data-trans="placeholder-author" type="text" name="author" placeholder="Author..." />
+        <input data-trans="placeholder-year" type="number" name="year" placeholder="Year..." />
+        <button data-trans="create-save" class="save" onclick="onAddBook()">Save</button>
+    </div>
+    <table class="table">
+        <thead class="thead-dark"><tr>
+            <th scope="col" class ="click-th" onclick="onSortTable('id')">id</th>
+            <th scope="col" data-trans="table-title" class ="click-th" onclick="onSortTable('name')">Title</th>
+            <th scope="col" data-trans="table-price" class ="click-th" onclick="onSortTable('price')">Price</th>
+            <th scope="col" data-trans="table-rating" class ="click-th" onclick="onSortTable('rating')">Rating</th>
+            <th scope="col" data-trans="table-image">Image</th>
+            <th scope="col" data-trans="table-actions">Actions</th>
+        </tr>
+        </thead>
+       <tbody class="books-table"></tbody>
+    </table>
+    <div>
+        <button data-trans="page-prev" class="next" onclick="onPaginating(-1)">Prev Page</button>
+        <button data-trans="page-next" class="next" onclick="onPaginating(1)">Next Page</button>
+    </div>
+    <div class="modal">
+        <h4 data-trans="modal-details">Book Details</h4>
+        <h5></h5>
+        <h6></h6>
+        <p></p>
+        <button class="rate-up" onclick="onChangeRating(this)">+</button><span class="book-rating"></span>
+        <button class="rate-down" onclick="onChangeRating(this)">-</button><br>
+        <button data-trans="modal-close" class="close-modal" onclick="onCloseModal()">Close</button>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="js/util.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>
