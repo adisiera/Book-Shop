@@ -21,7 +21,7 @@ function renderBookRow(book) {
     var strHTML = `<tr>
                     <td scope="row">${book.id}</td>
                     <td data-trans="table-${book.name}">${book.name}</td>
-                    <td>${formatCurrency(book.price.toFixed(2))}</td>
+                    <td class="currency-side">${formatCurrency(book.price.toFixed(2))}</td>
                     <td>${book.rating}</td>
                     <td><img src="${book.imgUrl}"/></td>
                     <td><button data-trans="button-read" onclick="onReadBook('${book.id}')">Read</button> <button data-trans="button-update" onclick="onUpdateBook('${book.id}')">Update</button> <button data-trans="button-delete" onclick="onRemoveBook('${book.id}')">Delete</button></td>

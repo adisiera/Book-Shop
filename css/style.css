@@ -9,6 +9,7 @@ body{
     background-image: url('../img/forest.jpg');
     background-repeat: no-repeat;
    background-size: cover;
+   font-family: 'Castoro', serif;
 }
 
 body.rtl {
